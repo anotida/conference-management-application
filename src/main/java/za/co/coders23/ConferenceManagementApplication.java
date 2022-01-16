@@ -15,7 +15,9 @@ public class ConferenceManagementApplication {
 
     public static void main(String[] args) throws IOException {
 
-        String path = ConferenceManagementApplication.class.getClassLoader().getResource("test-input.txt").getPath();
+        String path = (args.length > 0) ? args[0] : ConferenceManagementApplication.class
+                .getClassLoader().getResource("test-input.txt").getPath();
+
         List<Talk> talks = ReadRile.read(path);
 
         List<Track> tracks = new ArrayList<>();
