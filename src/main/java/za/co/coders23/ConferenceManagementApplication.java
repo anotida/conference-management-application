@@ -24,14 +24,14 @@ public class ConferenceManagementApplication {
             Track track = new Track(++trackCounter);
 
             Session morningSession = new Session(SessionType.MORNING);
-            Session afternoonSession = new Session(SessionType.AFTERNOON);
-
             Session lunchSession = new Session(SessionType.LUNCH, List.of(new Talk(60, "Lunch")));
 
             new TalkAllocator(talks, morningSession).allocate();
-            new TalkAllocator(talks, afternoonSession).allocate();
 
+            Session afternoonSession = new Session(SessionType.AFTERNOON);
             Session networkingEventSession = new Session(SessionType.EVENT, List.of(new Talk(0, "Networking Event ")));
+
+            new TalkAllocator(talks, afternoonSession).allocate();
 
             track.setSessions(List.of(morningSession, lunchSession, afternoonSession, networkingEventSession));
             tracks.add(track);
