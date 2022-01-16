@@ -1,2 +1,2 @@
-# conference-management-application
+# Application
 Conference Management
