@@ -22,6 +22,11 @@ public enum SessionType {
         public int getStartTime() {
             return 13;
         }
+
+        @Override
+        public int allowableMinutesBeforeEndTime() {
+            return 60;
+        }
     },
     LUNCH {
         @Override
@@ -48,4 +53,7 @@ public enum SessionType {
 
     public abstract int getDuration();
     public abstract int getStartTime();
+    public int allowableMinutesBeforeEndTime() {
+        return 0;
+    }
 }
